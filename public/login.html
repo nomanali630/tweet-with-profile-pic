@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <section class="login">
+        <div class="login-right">
+            <div class="right-content">
+                <h2>HTML CSS Login Form</h2>
+                <p>This login form is created using pure HTML and CSS.</p>
+                <a href="index.html">Sign Up</a>
+            </div>
+        </div>
+        <div class="login-left">
+            <div class="left-content">
+                <h2>Login</h2>
+                <div class="social">
+                    <a href="https://www.facebook.com"><img src="img/facebook.png" alt=""></a>
+                    <a href="https://twitter.com"><img src="img/twitter.png" alt=""></a>
+                    <a href="https://www.linkedin.com"><img src="img/linkedin.png" alt=""></a>
+                </div>
+                <form action="#" onsubmit="return login()">
+                    <p>or use your account</p>
+                    <input type="text" id="Lemail" placeholder="Email">
+                    <input type="password" id="Lpass" placeholder="Password">
+                    <a href="./forget_pass.html">Forgot Your Password?</a>
+                    <button >Log In</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="./client.js"></script>
+</body>
+</html>

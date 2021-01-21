@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <section id="signup" class="signup">
+        <div class="left-area">
+            <div class="left-area-content">
+                <h2>Welcome Back!</h2>
+                <p>To keep connected with us please login with your personal info</p>
+                <div class="left-btn">
+                    <a href="login.html">Sign In</a>
+                </div>
+            </div>
+        </div>
+        <div class="right-area">
+            <div class="right-area-content">
+                <h2>Create Account</h2>
+                <div class="social">
+                    <a href="https://www.facebook.com"><img src="img/facebook.png" alt=""></a>
+                    <a href="https://twitter.com"><img src="img/twitter.png" alt=""></a>
+                    <a href="https://www.linkedin.com"><img src="img/linkedin.png" alt=""></a>
+                </div>
+                <form action="#" onsubmit="return signup()">
+                    <p>or use your email for registration.</p>
+                    <input type="text" id="name" placeholder="Name">
+                    <input type="email"  id="email" placeholder="Email">
+                    <input type="password" id="password" placeholder="Password">
+                    <input type="number" id="phone" placeholder="phone">
+                    <input type="text" id="gender" placeholder="gender">
+                    <button>Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="./client.js"></script>
+</body>
+</html>

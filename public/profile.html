@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style2.css">
+    <link rel="icon" href="./fav.ico" type="image/gif" sizes="16x16">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./socket.io.js"></script>
+    <title>Profile</title>
+
+</head>
+
+<body onload="getProfile(); getTweets(); ">
+    <header class="bg-success sticky-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link text-white" href="#" onclick="showHome()">Home <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link text-white" href="#" onclick="showProfile()">Profile <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <!-- <li class="nav-item active">
+                                    <a class="nav-link text-white" href="#" onclick="showUsers()">Users<span
+                                            class="sr-only">(current)</span></a>
+                                </li> -->
+                            </ul>
+                            <button class="btn btn-outline-light my- my-sm-0 ml-2" type="button"
+                                onclick="logout()">Logout</button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="head" id="header">
+        <form onsubmit="return upload()">
+            
+            <input required type="file" id="fileInput" onchange="previewFile()">
+            <img src="" alt="" id="profilePic" style="border-radius: 100%; width: 200px; "><br>
+            <button type="submit" class="btn btn-outline-success"> Upload </button>
+        </form>
+        <section class="pt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="text-dark">Welcome <span id="pName"></span></h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pt-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form onsubmit="return post()" action="#">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="tweet" aria-describedby="emailHelp"
+                                    placeholder="Type your post" required>
+                            </div>
+                            <button class="btn btn-outline-success" style="width: 100%">Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="mt-5" id="home">
+        <div class="container">
+            <h1 class="text-center">Home</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-6 shadow p-3 mb-5 rounded" id="posts">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5" id="profile">
+        <div class="container">
+            <h1 class="text-center">Profile</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-6 shadow p-3 mb-5 rounded" id="userPosts">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="client.js"></script>
+
+</body>
+
+</html>
