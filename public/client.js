@@ -36,8 +36,8 @@ function signup() {
 function login() {
     axios({
         method: 'post',
-        url: url + '/login',
-
+        url: url+'/login',
+       
         withCredentials: true,
         data: {
 
@@ -58,7 +58,6 @@ function login() {
     });
     return false;
 }
-
 function logout() {
     axios({
         method: 'post',
